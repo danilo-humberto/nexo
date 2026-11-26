@@ -23035,10 +23035,10 @@ msgstr "Page layouts"
 msgid "Page name"
 msgstr "Page name"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: 9b8iNU
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "Page Not Found | Twenty"
+msgid "Page Not Found | Nexo"
+msgstr "Page Not Found | Nexo"
 
 #. js-lingui-id: QbrUIo
 #: src/modules/log-console/constants/LogConsoleSources.tsx
@@ -34047,10 +34047,10 @@ msgstr "Weekly personal AI usage reached. Now using workspace credits."
 msgid "weeks"
 msgstr "weeks"
 
-#. js-lingui-id: nTuObL
+#. js-lingui-id: IGaW1n
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "Welcome to Twenty"
+msgid "Welcome to Nexo"
+msgstr "Welcome to Nexo"
 
 #. js-lingui-id: t8ZvkC
 #: src/modules/ai-chat/workspace-setup/components/WorkspaceSetupChatPreamble.tsx

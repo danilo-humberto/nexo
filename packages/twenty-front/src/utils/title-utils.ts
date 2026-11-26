@@ -31,7 +31,7 @@ export const getPageTitleFromPath = (pathname: string): string => {
     case AppPath.Verify:
       return t`Verify`;
     case AppPath.SignInUp:
-      return t`Sign in or Create an account`;
+      return `${t`Sign in or Create an account`} | Nexo`;
     case AppPath.Invite:
       return t`Invite`;
     case AppPath.WorkspaceActivation:
@@ -63,6 +63,6 @@ export const getPageTitleFromPath = (pathname: string): string => {
     case SettingsPathPrefixes.Community:
       return t`Community - Settings`;
     default:
-      return 'Twenty';
+      return 'Nexo';
   }
 };

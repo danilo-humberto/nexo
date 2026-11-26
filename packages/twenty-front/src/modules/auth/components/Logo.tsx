@@ -5,7 +5,7 @@ import { isNonEmptyString } from '@sniptt/guards';
 import { AppPath } from 'twenty-shared/types';
 import { getImageAbsoluteURI, isDefined } from 'twenty-shared/utils';
 import { Avatar } from 'twenty-ui/primitives/data-display';
-import { themeCssVariables } from 'twenty-ui/theme';
+import { THEME_LIGHT, themeCssVariables } from 'twenty-ui/theme';
 import { REACT_APP_SERVER_BASE_URL } from '~/config';
 import { useRedirectToDefaultDomain } from '@/domain-manager/hooks/useRedirectToDefaultDomain';
 
@@ -24,6 +24,10 @@ const StyledContainer = styled.div`
 
   position: relative;
   width: ${themeCssVariables.spacing[12]};
+
+  &[data-product-logo] {
+    width: 168px;
+  }
 `;
 
 const StyledSecondaryLogo = styled.img`
@@ -52,6 +56,15 @@ const StyledPrimaryLogo = styled.div`
   width: 100%;
 `;
 
+const StyledProductLogo = styled.img`
+  background-color: ${THEME_LIGHT.background.primary};
+  border-radius: ${themeCssVariables.border.radius.sm};
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+`;
+
 export const Logo = ({
   primaryLogo,
   secondaryLogo,
@@ -60,12 +73,12 @@ export const Logo = ({
   to = AppPath.SignInUp,
 }: LogoProps) => {
   const { redirectToDefaultDomain } = useRedirectToDefaultDomain();
-  const defaultPrimaryLogoUrl = `${window.location.origin}/images/icons/android/android-launchericon-192-192.png`;
-
-  const primaryLogoUrl = getImageAbsoluteURI({
-    imageUrl: primaryLogo ?? defaultPrimaryLogoUrl,
-    baseUrl: REACT_APP_SERVER_BASE_URL,
-  });
+  const primaryLogoUrl = isDefined(primaryLogo)
+    ? getImageAbsoluteURI({
+        imageUrl: primaryLogo,
+        baseUrl: REACT_APP_SERVER_BASE_URL,
+      })
+    : null;
 
   const secondaryLogoUrl = isNonEmptyString(secondaryLogo)
     ? getImageAbsoluteURI({
@@ -74,15 +87,16 @@ export const Logo = ({
       })
     : null;
 
-  const isUsingDefaultLogo = !isDefined(primaryLogo);
+  const isUsingDefaultLogo = !isDefined(primaryLogoUrl);
 
   return (
-    <StyledContainer onClick={() => onClick?.()}>
+    <StyledContainer
+      data-product-logo={isUsingDefaultLogo ? true : undefined}
+      onClick={() => onClick?.()}
+    >
       {isUsingDefaultLogo ? (
         <UndecoratedLink to={to} onClick={() => redirectToDefaultDomain()}>
-          <StyledPrimaryLogo
-            style={{ backgroundImage: `url(${primaryLogoUrl})` }}
-          />
+          <StyledProductLogo src="/images/branding/nexo-logo.png" alt="Nexo" />
         </UndecoratedLink>
       ) : (
         <StyledPrimaryLogo

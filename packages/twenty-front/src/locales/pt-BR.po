@@ -23040,10 +23040,10 @@ msgstr "Layouts de Página"
 msgid "Page name"
 msgstr "Nome da página"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: 9b8iNU
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "Página não encontrada | Twenty"
+msgid "Page Not Found | Nexo"
+msgstr "Página não encontrada | Nexo"
 
 #. js-lingui-id: QbrUIo
 #: src/modules/log-console/constants/LogConsoleSources.tsx
@@ -34050,10 +34050,10 @@ msgstr "O uso semanal de IA pessoal foi atingido. Agora usando créditos do espa
 msgid "weeks"
 msgstr "semanas"
 
-#. js-lingui-id: nTuObL
+#. js-lingui-id: IGaW1n
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "Bem-vindo ao Twenty"
+msgid "Welcome to Nexo"
+msgstr "Bem-vindo ao Nexo"
 
 #. js-lingui-id: t8ZvkC
 #: src/modules/ai-chat/workspace-setup/components/WorkspaceSetupChatPreamble.tsx

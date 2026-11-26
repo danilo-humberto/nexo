@@ -9,7 +9,7 @@ describe('title-utils', () => {
   it('should return the correct title for a given path', () => {
     expect(getPageTitleFromPath('/verify')).toBe('Verify');
     expect(getPageTitleFromPath('/welcome')).toBe(
-      'Sign in or Create an account',
+      'Sign in or Create an account | Nexo',
     );
     expect(getPageTitleFromPath('/invite/:workspaceInviteHash')).toBe('Invite');
     expect(getPageTitleFromPath('/workspace-activation')).toBe(
@@ -43,7 +43,7 @@ describe('title-utils', () => {
     expect(getPageTitleFromPath('/settings/general')).toBe(
       'General - Settings',
     );
-    expect(getPageTitleFromPath('/')).toBe('Twenty');
-    expect(getPageTitleFromPath('/random')).toBe('Twenty');
+    expect(getPageTitleFromPath('/')).toBe('Nexo');
+    expect(getPageTitleFromPath('/random')).toBe('Nexo');
   });
 });

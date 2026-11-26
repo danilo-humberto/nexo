@@ -121,14 +121,10 @@ export const SignInUp = () => {
       return t`Use a backup or recovery code`;
     }
 
-    if (isGlobalScope) {
-      return t`Welcome to Twenty`;
-    }
-
     const workspaceName = workspacePublicData?.displayName;
 
-    if (!workspaceName) {
-      return t`Welcome to your workspace`;
+    if (isGlobalScope || !workspaceName) {
+      return t`Welcome to Nexo`;
     }
 
     return t`Welcome, ${workspaceName}.`;
