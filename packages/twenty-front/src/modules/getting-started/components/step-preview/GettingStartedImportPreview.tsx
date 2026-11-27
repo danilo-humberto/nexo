@@ -90,7 +90,7 @@ const StyledSideHeader = styled.div`
   height: 15px;
 `;
 
-const StyledTwentyLogo = styled.img`
+const StyledNexoMark = styled.img`
   border-radius: 2px;
   height: 12px;
   width: 12px;
@@ -201,10 +201,7 @@ export const GettingStartedImportPreview = () => {
         </StyledWires>
         <StyledSide>
           <StyledSideHeader>
-            <StyledTwentyLogo
-              src="/images/integrations/twenty-logo.svg"
-              alt=""
-            />
+            <StyledNexoMark src="/images/branding/nexo-mark.png" alt="" />
             {t`Twenty fields`}
           </StyledSideHeader>
           {TARGET_FIELDS.map((field) => (

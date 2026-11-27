@@ -36,7 +36,7 @@ export const useSendBrowserTestNotification = () => {
 
     await registration.showNotification(t`Notifications are on`, {
       body: t`New inbox messages will show up like this`,
-      icon: '/images/icons/android/android-launchericon-192-192.png',
+      icon: '/images/branding/nexo-mark.png',
     });
 
     return true;

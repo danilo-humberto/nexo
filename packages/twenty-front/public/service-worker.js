@@ -51,7 +51,7 @@ self.addEventListener('push', (event) => {
             body,
             tag,
             renotify,
-            icon: '/images/icons/android/android-launchericon-192-192.png',
+            icon: '/images/branding/nexo-mark.png',
             data: { url, messageCount },
           },
         );

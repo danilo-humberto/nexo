@@ -17,6 +17,21 @@ const getBootstrapContent = ({
   )?.[1];
 
 describe('renderFrontendHtml', () => {
+  it('uses the configured server origin for social preview images', () => {
+    const html = renderFrontendHtml({
+      template:
+        '<head><meta property="og:image" content="/images/branding/nexo-social.png"><meta name="twitter:image" content="/images/branding/nexo-social.png"></head>',
+      clientConfig: { serverUrl: 'https://nexo.example.com:8443/api' },
+      iframeMediaPermissions: [],
+    });
+
+    expect(
+      html.match(
+        /content="https:\/\/nexo\.example\.com:8443\/images\/branding\/nexo-social\.png"/g,
+      ),
+    ).toHaveLength(2);
+  });
+
   it('embeds the iframe media permissions used for the document policy', () => {
     const html = renderFrontendHtml({
       template: TEMPLATE,

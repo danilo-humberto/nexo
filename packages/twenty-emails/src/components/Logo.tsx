@@ -1,19 +1,16 @@
-import { type I18n } from '@lingui/core';
 import { Img } from 'react-email';
+
+import { getNexoMarkUrl } from 'src/constants/DefaultWorkspaceLogo';
 
 const logoStyle = {
   marginBottom: '40px',
 };
 
-type LogoProps = {
-  i18n: I18n;
-};
-
-export const Logo = ({ i18n }: LogoProps) => {
+export const Logo = () => {
   return (
     <Img
-      src="https://app.twenty.com/images/icons/windows11/Square150x150Logo.scale-100.png"
-      alt={i18n._('Twenty logo')}
+      src={getNexoMarkUrl()}
+      alt="Nexo"
       width="40"
       height="40"
       style={logoStyle}

@@ -1,8 +1,10 @@
 import { styled } from '@linaria/react';
-import { themeCssVariables } from 'twenty-ui/theme';
+import { THEME_LIGHT, themeCssVariables } from 'twenty-ui/theme';
 
 const StyledLogo = styled.img`
   animation: onboardingPulsingLogo 0.8s ease-in-out infinite alternate;
+  background-color: ${THEME_LIGHT.background.primary};
+  border-radius: ${themeCssVariables.border.radius.sm};
   height: ${themeCssVariables.spacing[12]};
   margin-bottom: ${themeCssVariables.spacing[8]};
   width: ${themeCssVariables.spacing[12]};
@@ -23,5 +25,5 @@ const StyledLogo = styled.img`
 `;
 
 export const OnboardingPulsingLogo = () => (
-  <StyledLogo src="/images/integrations/twenty-logo.svg" alt="" />
+  <StyledLogo src="/images/branding/nexo-mark.png" alt="" />
 );

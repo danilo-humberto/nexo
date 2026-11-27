@@ -85,7 +85,7 @@ export const AppConnectionHeader = ({
   return (
     <StyledContainer>
       <StyledAppLogoTile>
-        <StyledAppLogo src={'/images/integrations/twenty-logo.svg'} alt="" />
+        <StyledAppLogo src="/images/branding/nexo-mark.png" alt="" />
         {isNonEmptyString(workspaceName) && (
           <StyledWorkspaceLogoContainer>
             <Avatar

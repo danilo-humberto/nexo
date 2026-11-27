@@ -12,10 +12,21 @@ export const renderFrontendHtml = ({
   iframeMediaPermissions,
 }: {
   template: string;
-  clientConfig: object;
+  clientConfig: object & { serverUrl?: string };
   iframeMediaPermissions: IframeMediaPermission[];
-}): string =>
-  template
+}): string => {
+  const serverUrl = URL.parse(clientConfig.serverUrl ?? '');
+  const socialImagePath = '/images/branding/nexo-social.png';
+  const socialImageUrl =
+    serverUrl?.protocol === 'https:' || serverUrl?.protocol === 'http:'
+      ? `${serverUrl.origin}${socialImagePath}`
+      : socialImagePath;
+
+  return template
+    .replaceAll(
+      `content="${socialImagePath}"`,
+      () => `content="${socialImageUrl}"`,
+    )
     .replace(
       /<!-- BEGIN: Twenty Config -->[\s\S]*?<!-- END: Twenty Config -->/,
       '<script id="twenty-env-config">window._env_ = {};</script>',
@@ -26,3 +37,4 @@ export const renderFrontendHtml = ({
         `<script id="${CLIENT_CONFIG_BOOTSTRAP_ELEMENT_ID}" type="application/json">${serializeJsonForHtmlScript(clientConfig)}</script>` +
         `<script id="${IFRAME_MEDIA_PERMISSIONS_BOOTSTRAP_ELEMENT_ID}" type="application/json">${serializeJsonForHtmlScript(iframeMediaPermissions)}</script></head>`,
     );
+};

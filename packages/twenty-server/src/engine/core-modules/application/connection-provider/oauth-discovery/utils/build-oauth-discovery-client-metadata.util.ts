@@ -4,7 +4,7 @@ import { buildAppOAuthCallbackUrl } from 'src/engine/core-modules/application/co
 import { TWENTY_CURRENT_VERSION } from 'src/engine/core-modules/upgrade/constants/twenty-current-version.constant';
 
 const TWENTY_WEBSITE_URL = 'https://twenty.com';
-const TWENTY_LOGO_PATH = '/images/icons/ios/192.png';
+const NEXO_MARK_PATH = '/images/branding/nexo-mark.png';
 
 export const buildOAuthDiscoveryClientMetadata = ({
   serverUrl,
@@ -15,7 +15,7 @@ export const buildOAuthDiscoveryClientMetadata = ({
 }): OAuthClientMetadata => ({
   client_name: 'Twenty',
   client_uri: TWENTY_WEBSITE_URL,
-  logo_uri: new URL(TWENTY_LOGO_PATH, frontendUrl).toString(),
+  logo_uri: new URL(NEXO_MARK_PATH, frontendUrl).toString(),
   software_id: 'twenty',
   software_version: TWENTY_CURRENT_VERSION,
   redirect_uris: [buildAppOAuthCallbackUrl(serverUrl)],
